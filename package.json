@@ -6,9 +6,15 @@
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
     "start": "wrangler dev",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "database:create": "npx wrangler d1 create",
+    "migration:create": "fish scripts/migration-create.sh",
+    "migration:apply": "npx wrangler d1 migrations apply enem-experience-db --local && npx wrangler d1 migrations apply enem-experience-db --remote && npx prisma generate",
+    "migration:reset": "npx wrangler d1 migrations apply enem-experience-db --remote && npx prisma generate"
   },
   "dependencies": {
+    "@prisma/adapter-d1": "^6.16.3",
+    "@prisma/client": "^6.16.3",
     "chanfana": "^2.6.3",
     "hono": "^4.6.20",
     "zod": "^3.24.1"
@@ -16,6 +22,7 @@
   "devDependencies": {
     "@types/node": "22.13.0",
     "@types/service-worker-mock": "^2.0.4",
+    "prisma": "^6.16.3",
     "wrangler": "^4.41.0"
   }
 }

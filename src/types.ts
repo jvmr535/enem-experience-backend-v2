@@ -1,6 +1,12 @@
+
 import { DateTime, Str } from "chanfana";
 import type { Context } from "hono";
 import { z } from "zod";
+
+export type Env = {
+	DB: D1Database;
+	MY_KV?: KVNamespace;
+};
 
 export type AppContext = Context<{ Bindings: Env }>;
 

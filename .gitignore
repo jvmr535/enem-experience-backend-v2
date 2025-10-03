@@ -165,3 +165,8 @@ dist
 .env*
 !.env.example
 .wrangler/
+
+/src/generated/prisma
+
+# Migration baseline tracking
+.migration_baseline.prisma
