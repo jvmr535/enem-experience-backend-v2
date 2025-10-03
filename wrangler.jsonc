@@ -13,5 +13,12 @@
 			"database_id": "2684ad7d-c601-4950-a1f6-31ba311c8cba",
 			"remote": true
 		}
+	],
+	"rules": [
+		{
+			"type": "CompiledWasm",
+			"globs": ["**/*.wasm"],
+			"fallthrough": true
+		}
 	]
 }
